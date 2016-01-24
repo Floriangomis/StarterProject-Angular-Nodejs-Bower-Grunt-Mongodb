@@ -3,6 +3,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // Load Wiredep which allow to properly add some bower component directly into the html file.
     grunt.loadNpmTasks('grunt-wiredep');
+    // Plugin to modify sass file to css files
+    grunt.loadNpmTasks('grunt-contrib-sass');
     
     // Project configuration.
     grunt.initConfig({
@@ -25,13 +27,23 @@ module.exports = function(grunt) {
                     // Same for the bower.json            
                 }
             }
-        }
-
+        },
+        sass: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: './public/assets/stylesheets/sass',
+                    src: ['./**/*.scss'],
+                    dest: './public/assets/stylesheets/css',
+                    ext: '.css'
+                }]
+            }
+        },
     });
   
   // Default task(s).
-  grunt.registerTask('default', ['wiredep']);
+  grunt.registerTask('default', [ 'wiredep', 'sass' ]);
   // Minify Task
-  grunt.registerTask('minify', ['uglify']);
+  grunt.registerTask('minify', [ 'uglify' ]);
 
 };
