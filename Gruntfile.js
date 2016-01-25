@@ -5,6 +5,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-wiredep');
     // Plugin to modify sass file to css files
     grunt.loadNpmTasks('grunt-contrib-sass');
+    //Concat All AngularFile into big one
+    grunt.loadNpmTasks('grunt-contrib-concat');
     
     // Project configuration.
     grunt.initConfig({
@@ -39,10 +41,24 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        concat: {
+            dist: {
+                src: [
+                    // Entry point of the app
+                    "public/js/app.js",
+                    // Service
+                    
+                    // Controllers
+
+                    // Components
+                ],
+                dest: 'public/js/min/angularApp.js'
+            }
+        },
     });
   
   // Default task(s).
-  grunt.registerTask('default', [ 'wiredep', 'sass' ]);
+  grunt.registerTask('default', [ 'wiredep', 'sass', 'concat' ]);
   // Minify Task
   grunt.registerTask('minify', [ 'uglify' ]);
 
