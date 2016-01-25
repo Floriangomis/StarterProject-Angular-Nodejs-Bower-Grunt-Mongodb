@@ -11,7 +11,7 @@ app.use( bodyParser.json() );
 
 app.use( '/bower_components', express.static( './bower_components' ) );
 app.use( '/stylesheets', express.static( './public/assets/stylesheets/' ) );
-
+app.use( '/js', express.static('./public/js/' ) );
 
 
 // view engine setup
