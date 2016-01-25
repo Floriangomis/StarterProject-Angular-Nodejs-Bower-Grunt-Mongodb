@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         wiredep: {
             task: {
                 src: [
-                    'index.html',
+                    'templates/index.html',
                 ],
                 options: {
                     // By default directory point to the default bower directory
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
                     // Service
                     
                     // Controllers
-
+                    "public/js/controllers/home.js"
                     // Components
                 ],
                 dest: 'public/js/min/angularApp.js'
