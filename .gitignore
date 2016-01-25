@@ -1,4 +1,9 @@
 node_modules
 bower_components
+
 *.DS_Store
+
 *.css.map
+.sass-cache
+
+nodemon.json

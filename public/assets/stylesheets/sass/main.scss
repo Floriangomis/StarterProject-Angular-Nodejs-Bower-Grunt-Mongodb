@@ -1,8 +1,10 @@
 /*
 * Utils stylesheet
 */
-
 @import "./utils/reset";
+
+// I had to add ../../../ because the main.scss is located in public/asset ... directory.
+@import "./../../../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 /*
 * Home stylesheet
