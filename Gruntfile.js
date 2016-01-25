@@ -58,8 +58,6 @@ module.exports = function(grunt) {
     });
   
   // Default task(s).
-  grunt.registerTask('default', [ 'wiredep', 'sass', 'concat' ]);
-  // Minify Task
-  grunt.registerTask('minify', [ 'uglify' ]);
+  grunt.registerTask('default', [ 'wiredep', 'sass', 'concat', 'uglify' ]);
 
 };
