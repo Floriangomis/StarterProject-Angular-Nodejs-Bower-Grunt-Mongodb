@@ -12,11 +12,11 @@ module.exports = function(grunt) {
     grunt.initConfig({
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                mangle: false
             },
             build: {
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
+                src: 'public/js/min/angularApp.js',
+                dest: 'public/js/min/angularApp_min.js'
             }
         },
         wiredep: {

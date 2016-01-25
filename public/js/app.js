@@ -4,7 +4,8 @@
 
 'use strict';
 
-angular.module( 'appFront', [] )
-    .config(function( $locationProvider ){
-        $locationProvider.html5Mode( true );
-    });
+var app = angular.module( 'appFront', [] );
+
+app.config(function( $locationProvider ){
+    $locationProvider.html5Mode( true );
+});
