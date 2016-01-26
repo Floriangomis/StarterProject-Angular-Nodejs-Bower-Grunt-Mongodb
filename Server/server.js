@@ -18,7 +18,7 @@ app.use( '/templates', express.static('./public/templates/' ) );
 app.set( 'view engine', 'nunjucks' );
 app.set( 'env', 'local' );
 
-nunjucks.configure( path.join( __dirname, '../templates' ) , {
+nunjucks.configure( path.join( __dirname, '../public/templates' ) , {
 	autoescape: true,
 	express: app,
 	watch: true
@@ -26,7 +26,7 @@ nunjucks.configure( path.join( __dirname, '../templates' ) , {
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('*', function(req, res) {
-    res.render('index.html');
+    res.render('layout.html');
 });
 
 app.listen( 3000, function () {
