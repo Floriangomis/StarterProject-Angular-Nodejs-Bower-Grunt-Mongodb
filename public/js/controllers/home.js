@@ -2,8 +2,8 @@
 
 var module = angular.module( 'homeCtrl', [] );
 
-module.controller( 'homeController', [ '$scope', function( $scope ){
+module.controller( 'homeController', [ '$scope', HomeConstructor ] );
 
-        $scope.name = 'homeCtrl';
-
-} ] );
+function HomeConstructor( $scope ){
+    $scope.name = 'homeCtrl';
+};

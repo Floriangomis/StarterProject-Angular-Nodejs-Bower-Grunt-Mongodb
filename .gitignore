@@ -10,3 +10,5 @@ nodemon.json
 
 public/js/min/
 public/assets/stylesheets/css
+
+npm-debug.log
