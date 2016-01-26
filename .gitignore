@@ -7,3 +7,6 @@ bower_components
 .sass-cache
 
 nodemon.json
+
+public/js/min/
+public/assets/stylesheets/css
