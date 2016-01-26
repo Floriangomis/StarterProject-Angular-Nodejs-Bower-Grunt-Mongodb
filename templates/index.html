@@ -3,13 +3,32 @@
     <head>
         <meta charset="utf-8">
         <title> My personnal blog </title>
+        <base href="/">
 
         <link rel="stylesheet" type="text/css" href="stylesheets/css/main.css">
     </head>
-    <body>
-        Home page.
+    <body ng-app="appFront">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About me</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div ng-view></div>
+
         <!-- bower:js -->
-        <script src="bower_components/angular/angular.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+        <script src="../bower_components/angular-route/angular-route.js"></script>
         <!-- endbower -->
+        <script src="js/min/angularApp_min.js"></script>
     </body>
 </html>
