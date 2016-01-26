@@ -7,6 +7,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     //Concat All AngularFile into big one
     grunt.loadNpmTasks('grunt-contrib-concat');
+    // Watch files decided to autmatically relaunch default task
+    grunt.loadNpmTasks('grunt-contrib-watch');
     
     // Project configuration.
     grunt.initConfig({
@@ -49,15 +51,20 @@ module.exports = function(grunt) {
                     // Service
                     
                     // Controllers
-                    "public/js/controllers/home.js"
+                    "public/js/controllers/home.js",
+                    "public/js/controllers/about.js"
                     // Components
                 ],
                 dest: 'public/js/min/angularApp.js'
             }
         },
+        watch: {
+            files: [ 'public/js/controllers/*.js', 'public/js/app.js', 'public/assets/stylesheets/sass/**/*.scss' ],
+            tasks: [ 'wiredep', 'sass', 'concat', 'uglify' ]
+        },
     });
   
   // Default task(s).
-  grunt.registerTask('default', [ 'wiredep', 'sass', 'concat', 'uglify' ]);
+  grunt.registerTask( 'default', ['watch'] );
 
 };
