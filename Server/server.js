@@ -12,7 +12,7 @@ app.use( bodyParser.json() );
 app.use( '/bower_components', express.static( './bower_components' ) );
 app.use( '/stylesheets', express.static( './public/assets/stylesheets/' ) );
 app.use( '/js', express.static('./public/js/' ) );
-
+app.use( '/templates', express.static('./public/templates/' ) );
 
 // view engine setup
 app.set( 'view engine', 'nunjucks' );
@@ -25,7 +25,7 @@ nunjucks.configure( path.join( __dirname, '../templates' ) , {
 } );
 
 // respond with "hello world" when a GET request is made to the homepage
-app.get('/', function(req, res) {
+app.get('*', function(req, res) {
     res.render('index.html');
 });
 
