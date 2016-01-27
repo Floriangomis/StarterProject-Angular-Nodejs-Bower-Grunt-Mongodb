@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         wiredep: {
             task: {
                 src: [
-                    'templates/index.html',
+                    'public/templates/layout.html',
                 ],
                 options: {
                     // By default directory point to the default bower directory
@@ -66,5 +66,6 @@ module.exports = function(grunt) {
   
   // Default task(s).
   grunt.registerTask( 'default', ['watch'] );
-
+  // Start all task without watch
+  grunt.registerTask( 'start', [ 'wiredep', 'sass', 'concat', 'uglify' ] );
 };
